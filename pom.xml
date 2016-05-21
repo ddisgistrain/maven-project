@@ -132,13 +132,13 @@
 			<groupId>org.apache.derby</groupId>
 			<artifactId>derby</artifactId>
 			<version>${derby.version}</version>
-			<scope>run</scope>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-all</artifactId>
 			<version>${activemq.version}</version>
-			<scope>run</scope>
+			<scope>runtime</scope>
 		</dependency>
 		<!-- for testing -->
 		<dependency>

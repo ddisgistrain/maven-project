@@ -43,7 +43,7 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
 			path="/helloWorld"
 			doc:name="HTTP" />
 		<set-payload
-			value="Hello World"
+			value="#['Hello World']"
 			doc:name="Set Payload" />
 	</flow>
 	<flow name="retrieveFlights">
