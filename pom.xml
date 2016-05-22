@@ -6,7 +6,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.pwc.esb</groupId>
-	<artifactId>testproject</artifactId>
+	<artifactId>maven-project-fry1</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule</packaging>
 	<name>Mule testproject Application</name>
@@ -18,6 +18,8 @@
 		<activemq.version>5.13.3</activemq.version>
 		<mule.version>3.8.0</mule.version>
 		<mule.tools.version>1.2</mule.tools.version>
+		<cloudhub.username>myUsername</cloudhub.username>
+		<cloudhub.password>myPass</cloudhub.password>
 	</properties>
 
 	<build>
@@ -61,6 +63,29 @@
 								</resource>
 							</resources>
 						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<deploymentType>cloudhub</deploymentType>
+					<muleVersion>${mule.version}</muleVersion>
+					<username>${cloudhub.username}</username>
+					<password>${cloudhub.password}</password>
+					<workerType>Micro</workerType>
+					<redeploy>true</redeploy>
+					<environment>Production</environment>
+				</configuration>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
